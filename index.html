@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard Video Promosi Cimory</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #f4f8ff;
+    color: #17396e;
+    padding: 16px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+    background: white;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #dce5f3;
+    padding: 10px;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 160px;
+    height: 100px;
+    object-fit: contain;
+}
+
+h1 {
+    font-size: clamp(24px, 3vw, 38px);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.informasi {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.info {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.info h3 {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.info ul {
+    padding-left: 17px;
+}
+
+.biru { background: #e0efff; }
+.pink { background: #ffe6ec; }
+.kuning { background: #fff1d4; }
+.hijau { background: #e1f6e9; }
+
+.tagline {
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    font-style: italic;
+    margin: 16px 0;
+}
+
+.storyboard {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.kartu {
+    border: 1px solid #d9e4f2;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    min-width: 0;
+}
+
+.judul-kartu {
+    background: #e5f1ff;
+    padding: 9px;
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 40px;
+}
+
+.kartu:nth-child(3n+1) .judul-kartu {
+    background: #ffe5eb;
+}
+
+.kartu:nth-child(3n) .judul-kartu {
+    background: #e1f5e8;
+}
+
+.nomor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #d4ddea;
+    margin-right: 4px;
+}
+
+.waktu {
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.foto {
+    height: 150px;
+    background: #eaf0f8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.caption {
+    width: 100%;
+    padding: 8px;
+    background: #e0efff;
+    color: #17396e;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.isi {
+    padding: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.isi p {
+    margin-bottom: 8px;
+}
+
+.isi b {
+    color: #17396e;
+}
+
+.bagian-bawah {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.panel {
+    border-radius: 13px;
+    padding: 12px;
+    border: 1px solid #e1e8f2;
+}
+
+.panel h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.anggota {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 0 auto 5px;
+    display: block;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.anggota b {
+    display: block;
+}
+
+.aida {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.aida div {
+    padding: 12px 6px;
+    border-radius: 10px;
+    background: #ffe0e8;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.aida div:nth-child(2) { background: #dcecff; }
+.aida div:nth-child(3) { background: #ddf3e5; }
+.aida div:nth-child(4) { background: #ffedbd; }
+
+.huruf {
+    display: block;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.pesan ul {
+    list-style: none;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pesan li::before {
+    content: "✓ ";
+    color: #19805a;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin: 16px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media (max-width: 1100px) {
+    .storyboard {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bagian-bawah {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pesan {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 6px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .logo {
+        border-right: none;
+        border-bottom: 2px solid #dce5f3;
+        padding-bottom: 12px;
+    }
+
+    .informasi {
+        grid-template-columns: 1fr;
+    }
+
+    .storyboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .foto {
+        height: auto;
+    }
+
+    .foto img {
+        height: 125px;
+    }
+
+    .bagian-bawah {
+        grid-template-columns: 1fr;
+    }
+
+    .pesan {
+        grid-column: auto;
+    }
+
+    .aida {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .anggota {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+    }
+
+    .kartu, .panel {
+        break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <div class="logo">
+        <img
+            src="https://i.pinimg.com/1200x/05/b6/30/05b63067c41aa5eeb79b5a7a6ee37af3.jpg"
+            alt="Logo Cimory"
+        >
+    </div>
+
+    <div>
+        <h1>Storyboard Video Promosi Cimory Fresh Milk</h1>
+        <div class="subtitle">
+            "Jalani Harimu Ditemani Cimory" ♡
+        </div>
+    </div>
+</header>
+
+<div class="informasi">
+    <section class="info biru">
+        <h3>Anggota Kelompok (5 orang)</h3>
+        <ul>
+            <li>Susilawati</li>
+            <li>Intania Putri</li>
+            <li>Grace Divka Nainggolan</li>
+            <li>Nadya Amalia</li>
+            <li>Nikita Simarmata</li>
+        </ul>
+    </section>
+
+    <section class="info kuning">
+        <h3>Konsep</h3>
+        <ul>
+            <li>Fokus pada kegiatan setiap anggota.</li>
+            <li>Cimory menemani berbagai aktivitas.</li>
+            <li>Video seperti cerita sehari-hari mahasiswa.</li>
+        </ul>
+    </section>
+
+    <section class="info pink">
+        <h3>Durasi</h3>
+        <p>± 2,10 menit</p>
+        <br>
+        <h3>Lokasi</h3>
+        <ul>
+            <li>Kampus</li>
+            <li>Taman kampus</li>
+        </ul>
+    </section>
+</div>
+
+<div class="tagline">
+    <!-- Satu rasa, banyak cerita, sama-sama Cimory! ♡ -->
+</div>
+
+<div class="storyboard">
+
+<!-- SCENE 1 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">1</span>
+        Susi – Ngerjain Tugas
+        <span class="waktu">(0:04–0:08)</span>
+    </div>
+    <div class="foto">
+        <img src="susikamis.jpeg" alt="Susi suntuk banyak tugas">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Susi terlihat suntuk karena banyak tugas kuliah yang harus dikerjakan.</p>
+        <p><b>Dialog Intan:</b> “Suntuk”</p>
+    </div>
+</article>
+
+<!-- SCENE 2 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">2</span>
+        Nadya – Nonton Drama
+        <span class="waktu">(0:09–0:13)</span>
+    </div>
+    <div class="foto">
+        <img src="nadyakamis.jpeg" alt="Nadya menonton drama">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nadya sedang bersantai sambil menonton drama.</p>
+        <p><b>Dialog Intan:</b> “Lagi santai”</p>
+    </div>
+</article>
+
+<!-- SCENE 3 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">3</span>
+        Nikita – Main Game
+        <span class="waktu">(0:15–0:19)</span>
+    </div>
+    <div class="foto">
+        <img src="nikitakamis.jpeg" alt="Nikita bermain game">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nikita terlihat serius saat bermain game di ponselnya.</p>
+        <p><b>Dialog Intan:</b> “Main Game”</p>
+    </div>
+</article>
+
+<!-- SCENE 4 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">4</span>
+        Grace – Memegang Uang
+        <span class="waktu">(0:21–0:27)</span>
+    </div>
+    <div class="foto">
+        <img src="gracekamis.jpeg" alt="Grace memegang uang">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Grace memegang uang Rp10.000 sambil melihat uangnya dengan ekspresi bingung.</p>
+        <p><b>Dialog Intan:</b> “Hmm Uang Pas-pasan”</p>
+    </div>
+</article>
+
+<!-- SCENE 5 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">5</span>
+        Solusi dari Cimory!
+        <span class="waktu">(0:28–0:31)</span>
+    </div>
+    <div class="foto">
+        <img src="dikasihcimory.jpeg" alt="Intan memberikan Cimory">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Grace, Nadya, Susi, dan Nikita terlihat sedang melakukan aktivitas masing-masing. Intan datang memberikan Cimory Fresh Milk kepada teman-temannya.</p>
+        <p><b>Dialog Intan:</b> “Sambil Cimory-an aja!”</p>
+    </div>
+</article>
+
+<!-- SCENE 6 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">6</span>
+        Cimory Bikin Mood Naik
+        <span class="waktu">(0:32–0:38)</span>
+    </div>
+    <div class="foto">
+        <img src="intanseny.jpeg" alt="Intan memegang Cimory">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Intan memegang Cimory Fresh Milk sambil berbicara langsung ke kamera.</p>
+        <p><b>Dialog Intan:</b> “Cimory bikin mood naik dan membuat santai kamu jadi lebih seru dan menyenangkan. Hmm enak!”</p>
+    </div>
+</article>
+
+<!-- SCENE 7 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">7</span>
+        Proses Pembuatan Cimory Fresh Milk
+        <span class="waktu">(0:39–0:48)</span>
+    </div>
+    <div class="foto">
+        <img src="prosescimory.jpeg" alt="Proses pembuatan Cimory">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan video proses pembuatan Cimory Fresh Milk, mulai dari pengolahan susu hingga menjadi produk siap dikonsumsi.</p>
+        <p><b>Dialog Intan:</b> “Cimory Fresh Milk terbuat dari susu segar dan diproses menggunakan teknologi modern. Cimory Milk juga menghadirkan pilihan susu dengan kandungan nutrisi penting.”</p>
+    </div>
+</article>
+
+<!-- SCENE 8 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">8</span>
+        Manfaat Cimory Fresh Milk
+        <span class="waktu">(0:49–0:54)</span>
+    </div>
+    <div class="foto">
+        <img src="intanmanf.jpeg" alt="Kelima anggota berkumpul">
+        <div class="caption">Satu cerita,<br>sejuta kesegaran!</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Intan menjelaskan manfaat Cimory Fresh Milk sambil memegang produk dan menghadap kamera.</p>
+        <p><b>Dialog Intan:</b> “Mulai dari protein yang membantu membangun dan memelihara jaringan tubuh.”</p>
+    </div>
+</article>
+
+<!-- SCENE 9 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">9</span>
+        Manfaat Cimory Fresh Milk
+        <span class="waktu">(0:55–0:59)</span>
+    </div>
+    <div class="foto">
+        <img src="gracemanf.jpeg" alt="Kelima anggota memegang Cimory">
+        <div class="caption">Cimory<br>Rasa yang selalu menemani ♡</div>
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b>Grace memegang Cimory Fresh Milk sambil menghadap kamera dan menjelaskan manfaatnya.</p>
+        <p><b>Dialog Grace:</b> “Kalsium dan fosfor berperan dalam menjaga kesehatan tulang dan gigi.”</p>
+    </div>
+</article>
+
+<!-- SCENE 10 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">10</span>
+        Manfaat Cimory Fresh Milk
+        <span class="waktu">(01:00–01:06)</span>
+    </div>
+    <div class="foto">
+        <img src="nadyamanf.jpeg" alt="Susi memulai aktivitas">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nadya memegang Cimory Fresh Milk sambil menghadap kamera dan menjelaskan manfaatnya.</p>
+        <p><b>Dialog Nadya:</b> “Cimory Milk juga mengandung vitamin dan mineral yang membantu melengkapi nutrisi harianmu!”</p>
+    </div>
+</article>
+
+<!-- SCENE 11 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">11</span>
+        Varian Rasa Cimory Fresh Milk
+        <span class="waktu">(01:07–01:09)</span>
+    </div>
+    <div class="foto">
+        <img src="cimorytmn.jpeg" alt="Nadya bersantai">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan beberapa varian rasa Cimory Fresh Milk.</p>
+        <p><b>Dialog Nikita:</b> “Cimory Fresh Milk juga memiliki banyak varian rasa.”</p>
+    </div>
+</article>
+
+<!-- SCENE 12 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">12</span>
+        Cimory Fresh Milk Rasa Chocolate
+        <span class="waktu">(01:10–01:14)</span>
+    </div>
+    <div class="foto">
+        <img src="coklat.jpeg" alt="Nikita fokus bermain game">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan produk Cimory Fresh Milk varian rasa Chocolate.</p>
+        <p><b>Dialog Nikita:</b> “Rasa cokelat rasanya creamy karena dibuat dengan susu sapi segar yang dipadukan dengan cokelat premium.”</p>
+    </div>
+</article>
+
+<!-- SCENE 13 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">13</span>
+        Cimory Fresh Milk Rasa Strawberry
+        <span class="waktu">(01:15–01:21)</span>
+    </div>
+    <div class="foto">
+        <img src="straw.jpeg" alt="Intan memegang Cimory">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan produk Cimory Fresh Milk varian rasa Strawberry.</p>
+        <p><b>Dialog Grace:</b> “Cimory Fresh Milk rasa Strawberry punya rasa creamy dari susu sapi segar yang dipadukan dengan kesegaran buah strawberry.”</p>
+    </div>
+</article>
+
+<!-- SCENE 14 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">14</span>
+        Cimory Fresh Milk Rasa Marie Biscuits
+        <span class="waktu">(01:22–01:30)</span>
+    </div>
+    <div class="foto">
+        <img src="marie.jpeg" alt="Berbagi Cimory dengan teman">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan produk Cimory Fresh Milk varian rasa Marie Biscuits.</p>
+        <p><b>Dialog Susi:</b> “Cimory rasa Marie Biscuits adalah kolaborasi dengan Marie Regal. Perpaduan susu full cream dan biskuitnya menciptakan rasa unik yang bikin nostalgia.”</p>
+    </div>
+</article>
+
+<!-- SCENE 15 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">15</span>
+        Varian Rasa Cimory Fresh Milk Lainnya
+        <span class="waktu">(01:31–01:35)</span>
+    </div>
+    <div class="foto">
+        <img src="rak.jpeg" alt="Teman-teman menikmati kebersamaan">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Menampilkan beberapa varian rasa Cimory Fresh Milk yang tersusun di rak minimarket.</p>
+        <p><b>Dialog Susi:</b> “Dan Cimory Fresh Milk memiliki banyak varian rasa lainnya yang dapat kamu coba!”</p>
+    </div>
+</article>
+
+<!-- SCENE 16 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">16</span>
+        Ajakan Mencoba Cimory
+        <span class="waktu">(01:36–01:41)</span>
+    </div>
+    <div class="foto">
+        <img src="ajakansusi.jpeg" alt="Waktu istirahat bersama">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Susi memegang produk Cimory Fresh Milk dan berbicara langsung ke kamera.</p>
+        <p><b>Dialog Susi:</b> “Jadi, tunggu apa lagi? Yuk, coba sekarang Cimory dan temukan rasa favoritmu!”</p>
+    </div>
+</article>
+
+<!-- SCENE 17 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">17</span>
+        Tempat Membeli Cimory
+        <span class="waktu">(01:42–01:50)</span>
+    </div>
+    <div class="foto">
+        <img src="ajakanintan.jpeg" alt="Berbagi cerita bersama">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Intan memegang produk Cimory Fresh Milk dan berbicara langsung ke kamera.</p>
+        <p><b>Dialog Intan:</b> “Kamu bisa mendapatkannya di minimarket, supermarket, atau toko lainnya yang menjual produk Cimory. Jangan sampai ketinggalan buat coba, ya!”</p>
+    </div>
+</article>
+
+<!-- SCENE 18 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">18</span>
+       Penutup
+        <span class="waktu">(01:51–01:57)</span>
+    </div>
+    <div class="foto">
+        <img src="slogan3.jpeg" alt="Suasana ceria bersama teman">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Nikita, Nadya, dan Grace memegang produk Cimory Fresh Milk sambil berbicara langsung ke kamera.</p>
+        <p><b>Dialog Nikita, Nadya, dan Grace:</b> Cimory, teman baik, temani momenmu!</p>
+    </div>
+</article>
+
+<!-- SCENE 19 -->
+<article class="kartu">
+    <div class="judul-kartu">
+        <span class="nomor">19</span>
+        Menikmati Momen Bersama
+        <span class="waktu">(01:58–02:09)</span>
+    </div>
+    <div class="foto">
+        <img src="bersma.jpeg" alt="Cimory menemani aktivitas">
+    </div>
+    <div class="isi">
+        <p><b>Visual:</b> Susi, Intan, Grace, Nadya, dan Nikita masuk ke dalam frame kamera. Mereka berkumpul sambil mengobrol, berbagi cerita tentang aktivitas masing-masing, dan menikmati Cimory Fresh Milk bersama.</p>
+        <p><b>Dialog:</b> “Kelima anggota mengobrol dan tertawa bersama sambil meminum Cimory Fresh Milk.”</p>
+    </div>
+</article>
+
+</div>
+
+<div class="bagian-bawah">
+
+<section class="panel biru">
+    <h2>Pembagian Peran</h2>
+    <div class="anggota">
+        <div>
+            <img src="fotosusi.jpeg" alt="Foto Susi" class="avatar">
+            <b>Susi</b>
+            Attention, Desire, Action
+        </div>
+
+        <div>
+            <img src="fotointan.jpeg" alt="Foto Intan" class="avatar">
+            <b>Intan</b>
+            Interest, Desire, Action
+        </div>
+
+        <div>
+            <img src="fotograce.jpeg" alt="Foto Grace" class="avatar">
+            <b>Grace</b>
+            Attention, Desire, Action
+        </div>
+
+        <div>
+            <img src="fotonadya.jpeg" alt="Foto Nadya" class="avatar">
+            <b>Nadya</b>
+            Attention, Desire, Action
+        </div>
+
+        <div>
+            <img src="fotonikita.jpeg" alt="Foto Nikita" class="avatar">
+            <b>Nikita</b>
+            Attention, Desire, Action
+        </div>
+    </div>
+</section>
+
+<section class="panel kuning">
+    <h2>Alur AIDA dalam Video</h2>
+
+    <div class="aida">
+        <div>
+            <span class="huruf">A</span>
+            <b>Attention</b><br>
+            <span>(Pembukaan)</span>
+            <p style="margin-top: 12px;">
+                Menarik perhatian dengan aktivitas sehari-hari yang relate
+            </p>
+        </div>
+
+        <div>
+            <span class="huruf">I</span>
+            <b>Interest</b><br>
+            <span>(Ketertarikan)</span>
+            <p style="margin-top: 12px;">
+                Mengubah rasa penasaran menjadi rasa tertarik dengan memperkenalkan keunggulan utama Cimory.
+            </p>
+        </div>
+
+        <div>
+            <span class="huruf">D</span>
+            <b>Desire</b><br>
+            <span>(Keinginan)</span>
+            <p style="margin-top: 12px;">
+                Memunculkan rasa ingin mencoba dan mengonsumsi melalui daya tarik manfaat.
+            </p>
+        </div>
+
+        <div>
+            <span class="huruf">A</span>
+            <b>Action</b><br>
+            <span>(Ajakan Membeli)</span>
+            <p style="margin-top: 12px;">
+                Menyampaikan pesan penutup & ajakan untuk mencoba varian cimory
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="panel pink pesan">
+    <h2>Pesan Utama</h2>
+    <ul>
+        <li>Cimory = minuman praktis, enak, dan menyegarkan</li>
+        <li>Cocok untuk menemani berbagai aktivitas.</li>
+        <li>Tersedia dalam berbagai varian rasa.</li>
+        <li>Dapat dinikmati kapan saja dan di mana saja.</li>
+        <li>Jadi, tunggu apa lagi? Yuk, coba sekarang cimory dan temukan rasa favoritmu!</li>
+    </ul>
+</section>
+
+</div>
+
+<div class="footer">
+    ♡ Cimory — Teman Segar di Setiap Aktivitas! ♡
+</div>
+
+</div>
+</body>
+</html>
